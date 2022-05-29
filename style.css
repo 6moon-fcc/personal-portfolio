@@ -1,0 +1,499 @@
+/* ----- */
+/* GLOBAL */
+/* ----- */
+* {
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
+}
+
+body {
+	/* background-color: black; */
+	min-width: 768px;
+	background-image: url("./assets/stpdmvt.gif");
+	background-size: 600px;
+	background-position: bottom center;
+}
+/* ----- */
+/* END OF GLOBAL */
+/* ----- */
+
+/* ----- */
+/* NAVBAR */
+/* ----- */
+
+nav {
+	position: fixed;
+	width: 100vw;
+	/* ^^^ somehow doesn't work 100% in mobile */
+	z-index: 1000;
+	top: 0;
+	left: 0;
+}
+
+nav a {
+	color: rgb(255, 255, 255);
+	font-family: monospace;
+	background-color: rgb(0, 0, 0);
+	font-size: 2rem;
+}
+nav a:hover {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 255);
+}
+nav a:active {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 255);
+}
+@media only screen and (max-width: 600px) {
+	nav a {
+		font-size: 1.5rem;
+	}
+}
+/* ----- */
+/* END OF NAVBAR */
+/* ----- */
+
+/* ----- */
+/* WELCOME BANNER */
+/* ----- */
+.welcome-banner {
+	position: relative;
+	width: 100%;
+	min-height: fit-content;
+	background-image: url("./assets/spdfc.png");
+	background-size: 100px;
+	background-repeat: repeat;
+	background-position: bottom center;
+}
+@media only screen and (max-width: 768px) {
+	.welcome-banner {
+		background-size: 75px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.welcome-banner {
+		height: 100vh;
+	}
+}
+
+.real-welcome-header {
+	color: rgb(255, 255, 255);
+	font-family: monospace;
+	font-weight: 100;
+	font-size: clamp(9rem, 10vw + 1rem, 11rem);
+}
+@media only screen and (max-width: 400px) {
+	.real-welcome-header {
+		color: rgb(0, 0, 0);
+		word-break: break-all;
+	}
+}
+
+.skip-welcome-banner {
+	display: none;
+	position: sticky;
+	top: 75%;
+	left: 50%;
+	width: fit-content;
+	z-index: 1;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 255, 0.15);
+}
+.skip-welcome-banner:hover {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgb(0, 0, 255);
+}
+.skip-welcome-banner:active {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgb(0, 0, 255);
+}
+@media only screen and (max-width: 600px) {
+	.skip-welcome-banner {
+		display: block;
+	}
+}
+/* ----- */
+/* END OF WELCOME BANNER  */
+/* ----- */
+
+/* ----- */
+/* WELCOME SECTION */
+/* ----- */
+.welcome-header {
+	display: none;
+}
+
+#welcome-section {
+	position: relative;
+	height: calc(100vw / 1.3678077203);
+	min-height: 100vh;
+	background: linear-gradient(rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0.85));
+}
+@media only screen and (max-width: 1200px) {
+	#welcome-section {
+		height: calc(100vw / 1.3678077203 + 2.5rem);
+		min-height: calc(100vh + 2.5rem);
+	}
+}
+
+.prayer-wrapper {
+	position: relative;
+}
+.prayer-img {
+	width: 100%;
+}
+
+.separator {
+	display: none;
+	font-family: monospace;
+	width: 100%;
+	height: 2.5rem;
+	margin-top: -6px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 1);
+	color: rgba(255, 255, 255, 0.1);
+	text-transform: uppercase;
+}
+@media only screen and (max-width: 1200px) {
+	.separator {
+		display: block;
+	}
+}
+
+.welcome-paragraph {
+	position: absolute;
+	top: 33%;
+	width: 100%;
+	font-family: monospace;
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+	text-align: justify;
+	color: rgba(255, 255, 255, 0.5);
+}
+.welcome-paragraph:hover :is(span) {
+	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 1);
+	background-color: black;
+}
+.welcome-paragraph:active :is(span) {
+	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 1);
+	background-color: black;
+}
+@media only screen and (max-width: 768px) {
+	.welcome-paragraph {
+		width: 100vw;
+	}
+}
+
+.putin {
+	position: absolute;
+	bottom: 20%;
+	left: 20%;
+	width: 2.5rem;
+	font-family: monospace;
+	font-size: clamp(0.5rem, 0.75vw, 1rem);
+	color: rgba(255, 255, 255, 0.05);
+}
+.putin:hover {
+	color: rgb(255, 255, 255);
+}
+.putin:active {
+	color: rgb(255, 255, 255);
+}
+
+.skip-prayer {
+	display: block;
+	position: sticky;
+	top: 75%;
+	left: 50%;
+	width: fit-content;
+	color: rgba(255, 0, 0, 0.15);
+	background-color: rgba(0, 0, 0, 0.15);
+	font-weight: 600;
+}
+.skip-prayer:hover {
+	color: rgba(0, 0, 0, 1);
+	background-color: rgb(255, 0, 0);
+}
+.skip-prayer:active {
+	color: rgba(0, 0, 0, 1);
+	background-color: rgb(255, 0, 0);
+}
+@media only screen and (min-width: 1400px) {
+	.skip-prayer {
+		display: none;
+	}
+}
+
+/* ----- */
+/* END OF WELCOME SECTION */
+/* ----- */
+
+/* ----- */
+/* PROJECTS SECTION */
+/* ----- */
+#projects {
+	width: 100%;
+	position: relative;
+}
+
+/* tags-banner styling */
+.tags-banner-wrapper {
+	position: relative;
+	z-index: 2;
+	width: 60vw;
+	border-top: 2rem solid rgb(0, 0, 0);
+}
+@media only screen and (max-width: 1400px) {
+	.tags-banner-wrapper {
+		width: 75vw;
+	}
+}
+@media only screen and (max-width: 992px) {
+	.tags-banner-wrapper {
+		width: 100vw;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.tags-banner-wrapper {
+		width: 150vw;
+		max-width: 768px;
+	}
+}
+
+.tags-banner-header {
+	position: absolute;
+	top: 1.5rem;
+	width: 100vw;
+	z-index: 1;
+	font-family: monospace;
+	font-size: clamp(7rem, 10vw + 1rem, 8rem);
+	line-height: 0.75em;
+	word-break: keep-all;
+	line-break: strict;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 600px) {
+	.tags-banner-header {
+		color: rgba(0, 0, 0, 0.55);
+	}
+}
+
+.tags-banner-background {
+	display: block;
+	width: 100%;
+	filter: blur(1px) brightness(2) contrast(1);
+}
+
+.red-eye {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	width: 7%;
+	height: 21%;
+	background: rgb(255, 50, 50);
+	background: radial-gradient(
+		ellipse at center,
+		rgba(255, 50, 50, 1) 10%,
+		rgba(229, 229, 229, 0) 65%
+	);
+}
+.left {
+	top: 40%;
+	left: 23.5%;
+}
+.right {
+	top: 43%;
+	right: 30%;
+}
+.tags-banner-wrapper:hover :is(.red-eye) {
+	display: block;
+}
+.tags-banner-wrapper:active :is(.red-eye) {
+	display: block;
+}
+/* end of tags-banner-styling */
+
+/* tags-gallery styling */
+.tags-gallery {
+	width: 100%;
+	padding: 15vh 0 0 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, clamp(250px, 25vw, 350px));
+	grid-auto-rows: clamp(250px, 25vw, 350px);
+	grid-gap: 10vw;
+	justify-content: space-around;
+}
+
+@media only screen and (max-width: 768px) {
+	.tags-gallery {
+		width: 100vw;
+	}
+}
+
+.project-tile {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+}
+.project-tile :is(.tag-link) {
+	text-decoration: none;
+}
+.project-tile :is(.tag-tile-header) {
+	position: absolute;
+	left: -15%;
+	top: -15%;
+	display: inline;
+	width: fit-content;
+	font-size: 5rem;
+	font-family: monospace;
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	text-decoration: underline;
+	word-break: break-word;
+}
+
+.project-tile:hover {
+	border: 1rem solid rgba(255, 255, 255, 1);
+}
+.project-tile:hover :is(.tag-tile-header) {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255, 255, 255);
+}
+.project-tile:active {
+	border: 1rem solid rgba(255, 255, 255, 1);
+}
+.project-tile:active :is(.tag-tile-header) {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255, 255, 255);
+}
+
+#day {
+	background-image: url("./assets/sum.jpg");
+}
+#night {
+	background-image: url("./assets/nght.jpg");
+}
+#summer {
+	background-image: url("./assets/_MG_1333.jpg");
+}
+#winter {
+	background-image: url("./assets/wint.jpg");
+}
+#family {
+	background-image: url("./assets/fam.jpg");
+}
+#friends {
+	background-image: url("./assets/frds.jpg");
+}
+#animals {
+	background-image: url("./assets/anms.jpg");
+}
+#bw {
+	background-image: url("./assets/bw-1.jpg");
+}
+#self-portrait {
+	background-image: url("./assets/slfptt.jpg");
+}
+/* end of tags-gallery styling */
+
+.skip-tags {
+	display: block;
+	position: sticky;
+	bottom: 25%;
+	left: 60%;
+	width: fit-content;
+	z-index: 1;
+	color: rgba(0, 0, 255, 1);
+	background-color: rgba(255, 255, 255, 0);
+	font-weight: 600;
+	font-size: 1rem;
+}
+.skip-tags:hover {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgb(0, 0, 255);
+}
+.skip-tags:active {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgb(0, 0, 255);
+}
+@media only screen and (min-width: 992px) {
+	.skip-tags {
+		display: none;
+	}
+}
+/* ----- */
+/* END OF PROJECTS SECTION */
+/* ----- */
+
+/* ----- */
+/* CONTACTS SECTION */
+/* ----- */
+#about-contact-section {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	font-family: monospace;
+	height: 200vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+
+#about-contact-section :is(h2, a) {
+	margin-bottom: 2rem;
+}
+#about-contact-section :is(h2) {
+	font-size: 1.5rem;
+	font-weight: 100;
+	color: rgb(255, 255, 255);
+}
+#about-contact-section :is(a) {
+	font-size: 1rem;
+	padding: 0.25rem;
+	color: white;
+}
+#about-contact-section :is(a):hover {
+	color: blue;
+	background-color: white;
+}
+#about-contact-section :is(a):active {
+	color: blue;
+	background-color: white;
+}
+
+.arrows {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 33%;
+	width: 66%;
+	color: white;
+	font-size: 1rem;
+	letter-spacing: 0.25rem;
+	overflow: hidden;
+}
+@media only screen and (max-width: 684px) {
+	.arrows {
+		display: block;
+	}
+}
+
+.goto-contacts {
+	position: absolute;
+	top: 50vh;
+	font-size: 1rem;
+	font-family: "Times New Roman", Times, serif;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 600;
+}
+/* ----- */
+/* END OF CONTACTS SECTION */
+/* ----- */
