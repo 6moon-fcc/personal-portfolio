@@ -376,13 +376,13 @@ nav a:active {
 }
 
 #day {
-	background-image: url("./assets/sum.jpg");
+	background-image: url("./assets/day.jpg");
 }
 #night {
 	background-image: url("./assets/nght.jpg");
 }
 #summer {
-	background-image: url("./assets/_MG_1333.jpg");
+	background-image: url("./assets/sum.jpg");
 }
 #winter {
 	background-image: url("./assets/wint.jpg");
